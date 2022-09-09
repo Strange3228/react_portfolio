@@ -14,9 +14,13 @@ import {
   photoAnim,
   lineAnim,
   slider,
+  swoopAdoop,
 } from "../animation";
+import { useScroll } from "../components/useScroll";
 
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work
       variants={pageAnimation}
@@ -36,20 +40,30 @@ const OurWork = () => {
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
-            <motion.img variants={photoAnim} src={athlete} alt="athlete" />v
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie
+        ref={element}
+        variants={swoopAdoop}
+        animate={controls}
+        initial="hidden"
+      >
         <h2>The racer</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="theracer" />
         </Link>
       </Movie>
-      <Movie>
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+      >
         <h2>Goodtimes</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <img src={goodtimes} alt="Goodtimes" />
         </Link>
@@ -66,7 +80,7 @@ const Work = styled(motion.div)`
     padding: 1rem 0rem;
   }
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   .line {
     height: 0.5rem;
     background: #23d997;
@@ -76,6 +90,9 @@ const Movie = styled.div`
     width: 100%;
     height: 70vh;
     object-fit: cover;
+  }
+  h2 {
+    white-space: nowrap;
   }
 `;
 
