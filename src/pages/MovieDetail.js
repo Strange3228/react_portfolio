@@ -16,7 +16,7 @@ const MovieDetail = () => {
   useEffect(() => {
     const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
     if (currentMovie[0]) setMovie(currentMovie[0]);
-  }, [movies, url]);
+  }, [url]);
 
   return (
     <>
@@ -29,6 +29,9 @@ const MovieDetail = () => {
         >
           <HeadLine>
             <h2>{movie.title}</h2>
+            <a target="_blank" rel="noreferrer" href={movie.link}>
+              {movie.link}
+            </a>
             <img src={movie.mainImg} alt="movie" />
           </HeadLine>
           <Awards>
@@ -52,10 +55,9 @@ const MovieDetail = () => {
 };
 
 const ImageDisplay = styled.div`
-  min-height: 50vh;
   img {
     width: 100%;
-    height: 100vh;
+    height: auto;
     object-fit: cover;
   }
 `;
@@ -63,23 +65,46 @@ const Details = styled(motion.div)`
   color: white;
 `;
 const HeadLine = styled.div`
-  min-height: 90vh;
-  padding-top: 20vh;
+  padding-top: 3rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h2 {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  a {
+    display: flex;
+    margin: 0 auto;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 3px solid #23d997;
+    color: white;
+    background: transparent;
+    background-color: transparent;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 2rem;
+    &:hover {
+      background-color: #23d997;
+      color: white;
+    }
   }
   img {
     width: 100%;
-    height: 70vh;
+    height: auto;
     object-fit: cover;
   }
 `;
 const Awards = styled.div`
-  min-height: 80vh;
+  min-height: 40vh;
   display: flex;
   margin: 5rem 10rem;
   align-items: center;
@@ -102,6 +127,9 @@ const AwardStyle = styled.div`
   }
   p {
     padding: 2rem 0rem;
+  }
+  @media (max-width: 1300px) {
+    padding: 2rem 0;
   }
 `;
 

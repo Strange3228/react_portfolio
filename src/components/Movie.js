@@ -30,7 +30,6 @@ const MovieComponent = ({ title, mainImg, url, index }) => {
     </Movie>
   );
 };
-
 const Movie = styled(motion.div)`
   margin-bottom: 5rem;
   .line {
@@ -40,12 +39,21 @@ const Movie = styled(motion.div)`
   }
   img {
     width: 100%;
-    height: 650px;
-    max-height: 650px;
+    height: auto;
+    min-height: 650px;
     object-fit: cover;
+    @media (max-width: 850px) {
+      min-height: 400px;
+    }
+    @media (max-width: 550px) {
+      min-height: unset;
+    }
   }
   h2 {
     white-space: nowrap;
+    @media (max-width: 660px) {
+      font-size: 2.2rem;
+    }
   }
 `;
 

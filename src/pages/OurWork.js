@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 //Animations
 import { motion } from "framer-motion";
-import { sliderContainer, pageAnimation, slider } from "../animation";
+import {
+  sliderContainer,
+  pageAnimation,
+  slider,
+  slideFromBottom,
+} from "../animation";
 import { MovieState } from "../movieState";
 import { v4 as uuidv4 } from "uuid";
 import MovieComponent from "../components/Movie";
@@ -17,6 +22,9 @@ const OurWork = () => {
       exit="exit"
       style={{ background: "#fff" }}
     >
+      <ToolTip variants={slideFromBottom}>
+        Click on image to see details
+      </ToolTip>
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
@@ -37,7 +45,16 @@ const OurWork = () => {
     </Work>
   );
 };
-
+const ToolTip = styled(motion.div)`
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background: #23d997;
+  color: white;
+  z-index: 10;
+`;
 const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;

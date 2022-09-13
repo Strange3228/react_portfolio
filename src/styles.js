@@ -8,10 +8,12 @@ export const About = styled(motion.div)`
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
-  @media (max-width: 1300px) {
-    display: block;
+  @media (max-width: 950px) {
+    flex-direction: column-reverse;
     padding: 2rem 2rem;
     text-align: center;
+    min-height: unset;
+    margin-bottom: 3rem;
   }
 `;
 export const Description = styled.div`
@@ -38,8 +40,19 @@ export const Image = styled.div`
   border-radius: 10px;
   img {
     width: 100%;
-    height: 75vh;
+    height: 75%;
     object-fit: cover;
+  }
+  @media (max-width: 950px) {
+    width: 100%;
+    flex: unset;
+    margin-bottom: 3rem;
+    img {
+      width: auto;
+      height: auto;
+      max-height: 300px;
+      max-width: 90%;
+    }
   }
 `;
 export const Hide = styled.div`

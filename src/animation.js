@@ -160,3 +160,23 @@ export const firstMovieAnim = {
     },
   },
 };
+
+export const slideFromBottom = {
+  hidden: {
+    x: "-50%",
+    y: "110%",
+    transition: {
+      ease: "easeOut",
+      duration: 1,
+    },
+  },
+  show: {
+    x: "-50%",
+    y: "0%",
+    transition: {
+      ease: "easeOut",
+      duration: 1,
+      delay: 1
+    },
+  },
+};

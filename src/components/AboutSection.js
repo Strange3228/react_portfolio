@@ -50,8 +50,8 @@ const ContactLink = styled(Link)`
   transition: all 0.5s ease;
   font-family: "Inter", sans-serif;
   margin-top: 2rem;
-  @media (max-width: 1300px) {
-    margin: 2rem 0rem 5rem 0rem;
+  @media (max-width: 768px) {
+    margin: 2rem 0rem 0rem 0rem;
   }
   &:hover {
     background-color: #23d997;

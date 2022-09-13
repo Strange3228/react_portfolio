@@ -117,10 +117,11 @@ const ServicesSection = () => {
 const Services = styled(motion.div)`
   padding: 5rem 10rem;
   color: white;
-  @media (max-width: 1300px) {
+  @media (max-width: 950px) {
     display: block;
     padding: 2rem 2rem;
     text-align: center;
+    margin-bottom: 3rem;
   }
   h2 {
     padding-bottom: 5rem;
@@ -137,8 +138,10 @@ const Cards = styled.div`
   column-gap: 3rem;
   row-gap: 4rem;
   justify-content: center;
-  @media (max-width: 1300px) {
+  @media (max-width: 768px) {
     justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
   }
 `;
 const Card = styled.div`
@@ -147,6 +150,14 @@ const Card = styled.div`
   max-width: 35%;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    min-width: 40%;
+    max-width: 45%;
+  }
+  @media (max-width: 500px) {
+    min-width: 100%;
+    max-width: 100%;
+  }
   .icon {
     display: flex;
     align-items: center;

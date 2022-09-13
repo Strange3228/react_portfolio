@@ -75,6 +75,9 @@ const Title = styled.div`
   @media (max-width: 1300px) {
     margin-top: 5rem;
   }
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
 `;
 const Hide = styled.div`
   overflow: hidden;
@@ -91,6 +94,9 @@ const Social = styled(motion.div)`
     font-weight: lighter;
     font-size: 4rem;
     color: #353535;
+    @media (max-width: 767px) {
+      font-size: 2rem;
+    }
   }
 `;
 
