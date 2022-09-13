@@ -1,15 +1,20 @@
 import React from "react";
 //import icons
-import clock from "../img/clock.svg";
-import diaphragm from "../img/diaphragm.svg";
-import money from "../img/money.svg";
-import teamwork from "../img/teamwork.svg";
-import home2 from "../img/home2.png";
+import bootstrap from "../img/skills_icons/bootstrap.svg";
+import check from "../img/skills_icons/check-solid.svg";
+import css3 from "../img/skills_icons/css3.svg";
+import html5 from "../img/skills_icons/html5.svg";
+import js from "../img/skills_icons/js.svg";
+import php from "../img/skills_icons/php.svg";
+import reactIcon from "../img/skills_icons/react.svg";
+import sass from "../img/skills_icons/sass.svg";
+import wordpress from "../img/skills_icons/wordpress.svg";
 //Styles
-import { About, Description, Image, Hide } from "../styles";
+import { Description } from "../styles";
 import styled from "styled-components";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
+import { motion } from "framer-motion";
 
 const ServicesSection = () => {
   const [element, controls] = useScroll();
@@ -22,49 +27,104 @@ const ServicesSection = () => {
     >
       <Description>
         <h2>
-          Height <span>quality</span> services
+          My <span>skills</span>
         </h2>
         <Cards>
           <Card>
             <div className="icon">
-              <img src={clock} alt="" />
-              <h3>Efficient</h3>
+              <img src={html5} alt="" />
+              <h3>HTML</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
             <div className="icon">
-              <img src={teamwork} alt="" />
-              <h3>Teamwork</h3>
+              <img src={css3} alt="" />
+              <h3>CSS</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
             <div className="icon">
-              <img src={diaphragm} alt="" />
-              <h3>Diaphragm</h3>
+              <img src={js} alt="" />
+              <h3>JavaScript</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet.</p>
           </Card>
           <Card>
             <div className="icon">
-              <img src={money} alt="" />
-              <h3>Affordable</h3>
+              <img src={sass} alt="" />
+              <h3>SCSS</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet.</p>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={bootstrap} alt="" />
+              <h3>Bootstrap</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={check} alt="" />
+              <h3>Bulma</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={check} alt="" />
+              <h3>JQuery</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={php} alt="" />
+              <h3>PHP</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={wordpress} alt="" />
+              <h3>WordPress</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={check} alt="" />
+              <h3>Woocommerce</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={reactIcon} alt="" />
+              <h3>The basics of REACT</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={check} alt="" />
+              <h3>The basics of SQL</h3>
+            </div>
+          </Card>
+          <Card>
+            <div className="icon">
+              <img src={check} alt="" />
+              <h3>Experience in working with various WP plugins</h3>
+            </div>
           </Card>
         </Cards>
       </Description>
-      <Image>
-        <img src={home2} alt="" />
-      </Image>
     </Services>
   );
 };
 
-const Services = styled(About)`
+const Services = styled(motion.div)`
+  padding: 5rem 10rem;
+  color: white;
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem 2rem;
+    text-align: center;
+  }
   h2 {
     padding-bottom: 5rem;
+    text-align: center;
   }
   p {
     width: 70%;
@@ -74,20 +134,34 @@ const Services = styled(About)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  column-gap: 3rem;
+  row-gap: 4rem;
+  justify-content: center;
   @media (max-width: 1300px) {
     justify-content: center;
   }
 `;
 const Card = styled.div`
-  flex-basis: 20rem;
+  flex: 1;
+  min-width: 20%;
+  max-width: 35%;
+  display: flex;
+  justify-content: center;
   .icon {
     display: flex;
     align-items: center;
+    width: 100%;
+    img {
+      width: 3rem;
+      height: auto;
+    }
     h3 {
       margin-left: 1rem;
       background: white;
       padding: 1rem;
       color: black;
+      flex: 1;
+      text-align: center;
     }
   }
 `;

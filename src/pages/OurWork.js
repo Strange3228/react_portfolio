@@ -1,26 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-/*Images*/
-import athlete from "../img/athlete-small.png";
-import theracer from "../img/theracer-small.png";
-import goodtimes from "../img/goodtimes-small.png";
 //Animations
 import { motion } from "framer-motion";
-import {
-  sliderContainer,
-  pageAnimation,
-  fade,
-  photoAnim,
-  lineAnim,
-  slider,
-  swoopAdoop,
-} from "../animation";
-import { useScroll } from "../components/useScroll";
+import { sliderContainer, pageAnimation, slider } from "../animation";
+import { MovieState } from "../movieState";
+import { v4 as uuidv4 } from "uuid";
+import MovieComponent from "../components/Movie";
 
 const OurWork = () => {
-  const [element, controls] = useScroll();
-  const [element2, controls2] = useScroll();
+  const movies = MovieState();
   return (
     <Work
       variants={pageAnimation}
@@ -35,39 +23,17 @@ const OurWork = () => {
         <Frame3 variants={slider}></Frame3>
         <Frame4 variants={slider}></Frame4>
       </motion.div>
-      <Movie>
-        <motion.h2 variants={fade}>The Athlete</motion.h2>
-        <motion.div variants={lineAnim} className="line"></motion.div>
-        <Link to="/work/the-athlete">
-          <Hide>
-            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
-          </Hide>
-        </Link>
-      </Movie>
-      <Movie
-        ref={element}
-        variants={swoopAdoop}
-        animate={controls}
-        initial="hidden"
-      >
-        <h2>The racer</h2>
-        <motion.div variants={lineAnim} className="line"></motion.div>
-        <Link to="/work/the-racer">
-          <img src={theracer} alt="theracer" />
-        </Link>
-      </Movie>
-      <Movie
-        ref={element2}
-        variants={fade}
-        animate={controls2}
-        initial="hidden"
-      >
-        <h2>Goodtimes</h2>
-        <motion.div variants={lineAnim} className="line"></motion.div>
-        <Link to="/work/good-times">
-          <img src={goodtimes} alt="Goodtimes" />
-        </Link>
-      </Movie>
+      {movies.map((movie, index) => {
+        return (
+          <MovieComponent
+            key={uuidv4()}
+            title={movie.title}
+            mainImg={movie.mainImg}
+            url={movie.url}
+            index={index}
+          />
+        );
+      })}
     </Work>
   );
 };
@@ -82,25 +48,6 @@ const Work = styled(motion.div)`
   h2 {
     padding: 1rem 0rem;
   }
-`;
-const Movie = styled(motion.div)`
-  .line {
-    height: 0.5rem;
-    background: #23d997;
-    margin-bottom: 3rem;
-  }
-  img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-  }
-  h2 {
-    white-space: nowrap;
-  }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
 `;
 
 //Frame Animation

@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import { pageAnimation, titleAnim } from "../animation";
 import styled from "styled-components";
 import ScrollTop from "../components/ScrollTop";
+//Icons
+import mail from "../img/skills_icons/envelope-solid.svg";
+import github from "../img/skills_icons/github.svg";
+import linkedin from "../img/skills_icons/linkedin.svg";
 
 const ContactUs = () => {
   return (
@@ -16,26 +20,38 @@ const ContactUs = () => {
     >
       <Title>
         <Hide>
-          <motion.h2 variants={titleAnim}>Get in touch.</motion.h2>
+          <motion.h2 variants={titleAnim}>My Social Medias</motion.h2>
         </Hide>
       </Title>
       <div className="">
         <Hide>
           <Social variants={titleAnim}>
-            <Circle></Circle>
-            <h2>Send Us A Message.</h2>
+            <Icon src={mail} />
+            <a href="mailto:maksym.kutasevich@gmail.com">Send Me A Message.</a>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titleAnim}>
-            <Circle></Circle>
-            <h2>Send an email.</h2>
+            <Icon src={linkedin} />
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.linkedin.com/in/maksym-kutasievych-291a94180/"
+            >
+              Me on LinkedIn
+            </a>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titleAnim}>
-            <Circle></Circle>
-            <h2>Social Media</h2>
+            <Icon src={github} />
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/Strange3228"
+            >
+              Me on GitHub
+            </a>
           </Social>
         </Hide>
       </div>
@@ -63,17 +79,18 @@ const Title = styled.div`
 const Hide = styled.div`
   overflow: hidden;
 `;
-const Circle = styled.div`
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: #353535;
+const Icon = styled.img`
+  width: 4rem;
+  height: auto;
 `;
 const Social = styled(motion.div)`
   display: flex;
   align-items: center;
-  h2 {
+  a {
     margin: 2rem;
+    font-weight: lighter;
+    font-size: 4rem;
+    color: #353535;
   }
 `;
 

@@ -9,7 +9,7 @@ import { pageAnimation } from "../animation";
 const MovieDetail = () => {
   const location = useLocation();
   const url = location.pathname;
-  const [movies, setMovies] = useState(MovieState);
+  const movies = MovieState();
   const [movie, setMovie] = useState(null);
 
   //UseEffect
@@ -32,7 +32,7 @@ const MovieDetail = () => {
             <img src={movie.mainImg} alt="movie" />
           </HeadLine>
           <Awards>
-            {movie.awards.map((award) => {
+            {movie.descriptions.map((award) => {
               return (
                 <Award
                   title={award.title}
@@ -43,7 +43,7 @@ const MovieDetail = () => {
             })}
           </Awards>
           <ImageDisplay>
-            <img src={movie.secondaryImg} alt="Movie secondary image" />
+            <img src={movie.secondaryImg} alt="Movie secondary" />
           </ImageDisplay>
         </Details>
       )}

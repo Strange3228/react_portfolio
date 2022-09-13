@@ -34,7 +34,13 @@ export const titleAnim = {
 };
 
 export const fade = {
-  hidden: { opacity: 0 },
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 0.75,
+      ease: "easeIn",
+    },
+  },
   show: {
     opacity: 1,
     transition: {
@@ -129,8 +135,28 @@ export const swoopAdoop = {
     opacity: 1,
     width: "100%",
     transition: {
+      ease: "easeInOut",
+      duration: 1.3,
+    },
+  },
+};
+
+export const firstMovieAnim = {
+  hidden: {
+    opacity: 0,
+    width: "0%",
+    transition: {
       ease: "easeOut",
       duration: 1,
+    },
+  },
+  show: {
+    opacity: 1,
+    width: "100%",
+    transition: {
+      ease: "easeInOut",
+      duration: 1.3,
+      delay: 1,
     },
   },
 };
