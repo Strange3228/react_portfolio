@@ -7,6 +7,7 @@ import ContactUs from "./pages/ContactUs";
 import OurWork from "./pages/OurWork";
 import Nav from "./components/Nav";
 import MovieDetail from "./pages/MovieDetail";
+import Footer from "./components/Footer";
 //Router
 import { Routes, Route, useLocation } from "react-router-dom";
 //Animation
@@ -25,13 +26,14 @@ function App() {
         }}
       >
         <Routes location={location} key={location.pathname}>
-          <Route path="/" exact element={<AboutUs />} />
+          <Route path="/react_portfolio" exact element={<AboutUs />} />
           <Route path="/aboutus" exact element={<AboutUs />} />
           <Route path="/work" exact element={<OurWork />} />
           <Route path="/work/:id" element={<MovieDetail />} />
           <Route path="/contact" exact element={<ContactUs />} />
         </Routes>
       </AnimatePresence>
+      <Footer />
     </div>
   );
 }

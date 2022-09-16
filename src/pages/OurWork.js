@@ -54,6 +54,7 @@ const ToolTip = styled(motion.div)`
   background: #23d997;
   color: white;
   z-index: 10;
+  text-align: center;
 `;
 const Work = styled(motion.div)`
   min-height: 100vh;
