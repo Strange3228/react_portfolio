@@ -66,6 +66,7 @@ const FaqSection = () => {
 
 const Faq = styled(About)`
   display: block;
+  max-height: unset;
   h2 {
     padding-bottom: 2rem;
     font-weight: lighter;

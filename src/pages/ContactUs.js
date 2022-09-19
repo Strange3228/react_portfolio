@@ -8,6 +8,7 @@ import ScrollTop from "../components/ScrollTop";
 import mail from "../img/skills_icons/envelope-solid.svg";
 import github from "../img/skills_icons/github.svg";
 import linkedin from "../img/skills_icons/linkedin.svg";
+import phoneImg from "../img/skills_icons/phone.svg";
 
 const ContactUs = () => {
   return (
@@ -52,6 +53,12 @@ const ContactUs = () => {
             >
               Me on GitHub
             </a>
+          </Social>
+        </Hide>
+        <Hide>
+          <Social variants={titleAnim}>
+            <Icon src={phoneImg} />
+            <a href="tel:+48732691790">+48 732 691 790</a>
           </Social>
         </Hide>
       </div>
