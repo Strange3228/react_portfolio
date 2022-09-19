@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/react_portfolio/static/js/main.5fb797ed.js",
+    "main.js": "/react_portfolio/static/js/main.ca7b5aab.js",
     "static/js/787.9ab376b7.chunk.js": "/react_portfolio/static/js/787.9ab376b7.chunk.js",
     "static/media/helio1.png": "/react_portfolio/static/media/helio1.b9c0bf9e50dbfe383916.png",
     "static/media/ecoset1.png": "/react_portfolio/static/media/ecoset1.7556e0df1329605edcb8.png",
@@ -26,14 +26,15 @@
     "index.html": "/react_portfolio/index.html",
     "static/media/js.svg": "/react_portfolio/static/media/js.727b5becd3770d9a51042e27a5fea288.svg",
     "static/media/linkedin.svg": "/react_portfolio/static/media/linkedin.86bfba09bc9babc4f3d97864d25570e3.svg",
+    "static/media/phone.svg": "/react_portfolio/static/media/phone.517524eef2165e2def62c10514d236fe.svg",
     "static/media/envelope-solid.svg": "/react_portfolio/static/media/envelope-solid.d4254741e5ae17f621d380c1498a0bee.svg",
     "static/media/check-solid.svg": "/react_portfolio/static/media/check-solid.531da06465cc8c391a0c330a94e63530.svg",
     "static/media/html5.svg": "/react_portfolio/static/media/html5.54e3f32c3bf5e26cc294ca46026810c9.svg",
     "static/media/css3.svg": "/react_portfolio/static/media/css3.e446af114099f484d02419a1d829f9d1.svg",
-    "main.5fb797ed.js.map": "/react_portfolio/static/js/main.5fb797ed.js.map",
+    "main.ca7b5aab.js.map": "/react_portfolio/static/js/main.ca7b5aab.js.map",
     "787.9ab376b7.chunk.js.map": "/react_portfolio/static/js/787.9ab376b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5fb797ed.js"
+    "static/js/main.ca7b5aab.js"
   ]
 }
